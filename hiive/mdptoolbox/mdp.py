@@ -1147,9 +1147,7 @@ class QLearning(MDP):
 
             take_run_stat = n % self.run_stat_frequency == 0 or n == self.max_iter
 
-            # Reinitialisation of trajectories every 100 transitions
-            if (self.iter_callback is None and (n % 100) == 0) or reset_s:
-                s = _np.random.randint(0, self.S)
+            # Reinitialisation of trajectories every 100 transitions REMOVED
 
             # Action choice : greedy with increasing probability
             # The agent takes random actions for probability ε and greedy action for probability (1-ε).
